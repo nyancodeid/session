@@ -1,15 +1,15 @@
 {
-	"name": "@telegraf/session",
-	"version": "2.0.0-beta.7",
-	"description": "Session store adapters for Telegraf",
+	"name": "@nyancodeid/session",
+	"version": "1.0.1",
+	"description": "Session store adapters for Telegraf and Bun SQLite",
 	"main": "./memory.js",
-	"homepage": "https://github.com/telegraf/session",
+	"homepage": "https://github.com/nyancodeid/session",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/telegraf/session.git"
+		"url": "git+ssh://git@github.com/nyancodeid/session.git"
 	},
 	"bugs": {
-		"url": "https://github.com/telegraf/session/issues"
+		"url": "https://github.com/nyancodeid/session/issues"
 	},
 	"scripts": {
 		"clean": "rimraf ./*.js ./*.d.ts",
@@ -22,7 +22,7 @@
 		"session",
 		"mongodb"
 	],
-	"author": "Muthu Kumar <@MKRhere> (https://mkr.pw)",
+	"author": "Ryan Aunur Rassyid <ryandevstudio@gmail.com>",
 	"license": "MIT",
 	"files": [
 		"./*.js",
@@ -48,6 +48,10 @@
 		"./sqlite": {
 			"types": "./sqlite.d.ts",
 			"default": "./sqlite.js"
+		},
+		"./bun.sqlite": {
+			"types": "./bun.sqlite.d.ts",
+			"default": "./bun.sqlite.js"
 		}
 	},
 	"peerDependencies": {
@@ -85,13 +89,18 @@
 		},
 		"redis": {
 			"optional": true
+		},
+		"kysely-bun-sqlite": {
+			"optional": true
 		}
 	},
 	"devDependencies": {
 		"@types/better-sqlite3": "^7.6.9",
 		"@types/pg": "^8.11.0",
 		"better-sqlite3": "^9.3.0",
+		"bun-types": "^1.1.33",
 		"kysely": "^0.27.2",
+		"kysely-bun-sqlite": "^0.3.2",
 		"mongodb": "^6.3.0",
 		"mysql2": "^3.9.0",
 		"pg": "^8.11.3",

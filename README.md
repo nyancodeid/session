@@ -10,6 +10,7 @@ An in-memory session module is bundled with Telegraf. The following modules are 
 -   [Redis](#redis)
 -   [MongoDB](#mongodb)
 -   [SQLite](#sqlite)
+-   [Bun SQLite](#bun-sqlite)
 -   [PostgreSQL](#postgresql)
 -   [MySQL / MariaDB](#mysql--mariadb)
 
@@ -89,6 +90,32 @@ bot.use(session({ store }));
 ```
 
 To reuse an existing Better-SQLite3 database instance, use `SQLite({ database })` instead.
+
+## Bun SQLite
+
+Install the kysely-bun-sqlite driver and types alongside this module.
+
+```shell
+bun add @telegraf/session kysely kysely-bun-sqlite
+```
+
+Usage is pretty straightforward:
+
+```TS
+import { BunSQLite } from "@telegraf/session/bun-sqlite";
+
+const store = BunSQLite({
+	filename: "./telegraf-sessions.sqlite",
+});
+
+const bot = new Telegraf(token, opts);
+bot.use(session({ store }));
+
+// the rest of your bot
+```
+
+To reuse an existing bun:sqlite database instance, use `BunSQLite({ database })` instead.
+
 
 ## PostgreSQL
 
