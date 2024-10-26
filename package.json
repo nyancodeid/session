@@ -49,7 +49,7 @@
 			"types": "./sqlite.d.ts",
 			"default": "./sqlite.js"
 		},
-		"./bun.sqlite": {
+		"./bun:sqlite": {
 			"types": "./bun.sqlite.d.ts",
 			"default": "./bun.sqlite.js"
 		}

@@ -102,7 +102,7 @@ bun add @telegraf/session kysely kysely-bun-sqlite
 Usage is pretty straightforward:
 
 ```TS
-import { BunSQLite } from "@telegraf/session/bun-sqlite";
+import { BunSQLite } from "@telegraf/session/bun:sqlite";
 
 const store = BunSQLite({
 	filename: "./telegraf-sessions.sqlite",
